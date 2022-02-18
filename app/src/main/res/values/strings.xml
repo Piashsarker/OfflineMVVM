@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">interview-prepration-android</string>
+    <string name="item_image">Item Image</string>
+    <string name="item_title">This is a title</string>
+    <string name="item_description">This is a large item description , that can handle multiple line of character test.</string>
+    <string name="text_popularity">120000K</string>
+    <string name="comment">Comment</string>
+    <string name="submit">Submit</string>
+</resources>

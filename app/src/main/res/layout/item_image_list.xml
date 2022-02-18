@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="photo"
+            type="com.piash.sarker.model.CommentEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/container"
+        android:onClick="@{clickListener}"
+        android:background="#fafafa"
+        android:layout_marginBottom="2dp">
+
+
+        <ImageView
+            android:id="@+id/imgItem"
+            android:layout_width="80dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/item_image"
+            android:layout_height="80dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            tools:text="@string/item_title"
+            app:layout_constraintLeft_toRightOf="@id/imgItem"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:maxLines="1"
+            android:text="@{photo.message}"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="0dp"
+            android:textSize="13sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="@string/item_description"
+            app:layout_constraintLeft_toRightOf="@id/imgItem"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:textColor="#666666"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@{photo.type}"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
